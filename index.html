@@ -37,6 +37,10 @@
         }
       }
     </script>
+    <script>
+      // Polyfill for process.env to prevent ReferenceError in browser environments
+      window.process = window.process || { env: { API_KEY: '' } };
+    </script>
     <style>
       body {
         background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 60%);
@@ -71,5 +75,6 @@
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
